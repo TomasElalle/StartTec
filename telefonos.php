@@ -13,7 +13,16 @@
 	<div class="m-5 container-sm border w-50 rounded p-2">
 		<a href="./index.php" class="btn btn-success m-1">Volver</a>
 		<form class="" method="POST" action="backend/carga_tel.php">
-		<label class="form-label"><h2>Cargar Telefono</h2></label>
+		<label class="form-label"><h2>Cargar Telefono</h2></label><br>
+		<select name="dni" class="form-control w-25 m-2">
+		<?php
+		$sql = "SELECT dni FROM clientes";
+		$result = mysqli_query($conexion,$sql);
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<option value='" . $row['dni'] . "'>'" . $row['dni'] . "'</option>";
+		}
+		?>
+		</select>
 		<input class="form-control w-25 m-2" type="text" name="imei" placeholder="IMEI">
 		<input class="form-control w-25 m-2" type="text" name="modelo" placeholder="Modelo">
 		<input class="form-control w-25 m-2" type="text" name="marca" placeholder="Marca">
@@ -30,7 +39,7 @@
 			</div>
 		</form>
 		<?php
-		include('backend/tabla_telefono.php')
+		include('backend/tabla_uniones.php')
 	?>
 	</div>
 

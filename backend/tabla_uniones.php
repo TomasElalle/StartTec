@@ -22,6 +22,8 @@ echo '<table class="table table-striped mt-2">
       <th scope="col">ID</th>
       <th scope="col">IMEI</th>
       <th scope="col">DNI</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Marca</th>
       <th scope="col">Fecha de carga</th>
     </tr>
   </thead>
@@ -36,6 +38,8 @@ while ($row = mysqli_fetch_row($resp_sql) ){
       <td>".$row[1]."</td>
       <td>".$row[2]."</td>
       <td>".$row[3]."</td>
+      <td>".$row[4]."</td>
+      <td>".$row[5]."</td>
     </tr>
   
 
