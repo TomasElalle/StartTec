@@ -5,9 +5,9 @@ include('conexion.php');
 	$imei = $_POST['imei'];
 	
 	
-	if(isset($dni))
+	if(isset($imei))
 	{
-		$sql = "DELETE FROM telefonos WHERE imei = '".$imei."'";
+		$sql = "DELETE FROM cliente_tel WHERE imei = '".$imei."'";
 
 		mysqli_query($conexion,$sql);
 		

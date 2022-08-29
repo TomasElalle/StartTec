@@ -6,7 +6,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="jquery.tablesort.js"></script>
 </head>
 <body>
 <div class="container mt-5 w-75 p-2 border rounded">	
@@ -16,9 +15,14 @@
 		<div class="col"><div class="d-grid gap-2 d-md-flex justify-content-md-center"><a href="./telefonos.php" class="btn btn-primary m-1">Carga Telefono</a></div></div>
 	<div class="row row-cols-2 mt-2"><br>
 		<!--<div class="col w-25"><button type="button" class="btn btn-danger m-1">Carga Stock</button></div>-->
-		<div class="col w-75"><input class="form-control " type="text" name="buscador" placeholder="Buscador"></div>
+    
+    <FORM METHOD=POST ACTION="backend/buscar.php">
+    Buscar: <INPUT TYPE="text" NAME="busqueda">
+    </FORM>
+    
+		<!--<div class="col w-75"><input class="form-control " type="text" name="buscador" placeholder="Buscador"></div>
 	</div>
-	<div class="row row-cols-2 mt-2">
+	<div class="row row-cols-2 mt-2">-->
 
 	</div>
   <?php
@@ -30,7 +34,7 @@
 
   $num = mysqli_num_rows($result);
 
-  echo '<table id="myTable" class="table table-dark mt-2 m-1 tablesorter">';
+  echo '<table id="myTable" class="table table-dark mt-2 m-1">';
   echo "<thead>
   <tr>
     <th>ID</th>
@@ -58,12 +62,6 @@
 
 echo "</table>";
 ?>
-
-  <script>
-  $(function() {
-  $("#myTable").tablesorter();
-  });
-  </script>
 </div>
 </body>
 </html>
